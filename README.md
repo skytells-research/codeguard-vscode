@@ -4,6 +4,11 @@
 ![VSCode Version](https://img.shields.io/badge/VSCode-%3E%3D1.96.0-blue)
 
 **Real-Time AI-Powered Code Security Analysis for VS Code**
+CodeGuard is a powerful VS Code extension that provides real-time security analysis of your code using advanced AI models. It helps developers identify potential security vulnerabilities, including SQL injection, XSS, and RCE threats, as they write code - making security an integral part of the development workflow.
+
+
+![CodeGuard Banner](https://raw.githubusercontent.com/skytells-research/codeguard-vscode/main/banner.png)
+
 
 ## Features ✨
 
