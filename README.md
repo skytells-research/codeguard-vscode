@@ -1,12 +1,3 @@
-Here's the raw text for the README.md. To use it:
-
-1. Select all text below between the triple quotes
-2. Copy it (right-click → Copy or Ctrl+C)
-3. Create a new file named `README.md`
-4. Paste the content
-5. Save the file
-
-```
 # CodeGuard 🔒
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -29,16 +20,27 @@ Here's the raw text for the README.md. To use it:
 - VS Code ≥1.96.0
 - OpenAI API key
 
+### Getting an OpenAI API Key
+1. Visit [OpenAI's platform](https://platform.openai.com/signup)
+2. Create or log into your account
+3. Go to [API Keys section](https://platform.openai.com/api-keys)
+4. Click "Create new secret key"
+5. Copy your API key (store it safely - you won't be able to see it again!)
+
 ### Steps
 1. Install from [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=skytells.codeguard)
+
+
    ```bash
-   code --install-extension codeguard-0.0.1.vsix
+   code --install-extension skytells.codeguard
    ```
 2. Set API key:
+
    ```bash
    Ctrl+Shift+P → "CodeGuard: Set OpenAI API Key"
    ```
 3. Configure in `.vscode/settings.json`:
+
    ```json
    {
      "codeguard.model": "gpt-4",
