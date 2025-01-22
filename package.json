@@ -1,0 +1,121 @@
+{
+  "name": "codeguard",
+  "displayName": "CodeGuard",
+  "description": "Real-time AI-Powered Security Analysis for Developers",
+  "version": "0.0.1",
+  "pricing": "Free",
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "publisher": "skytells",
+  "sponsor": {
+    "url": "https://github.com/sponsors/skytells-research"
+  },
+  "categories": [
+    "Linters"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:python",
+    "onLanguage:java",
+    "onLanguage:php",
+    "onLanguage:html",
+    "onCommand:codeguard.setApiKey",
+    "onCommand:codeguard.analyzeFile",
+    "onCommand:codeguard.toggleRealTimeAnalysis"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeguard.setApiKey",
+        "title": "Set OpenAI API Key",
+        "category": "CodeGuard"
+      },
+      {
+        "command": "codeguard.analyzeFile",
+        "title": "Run Full Security Analysis",
+        "category": "CodeGuard"
+      },
+      {
+        "command": "codeguard.toggleRealTimeAnalysis",
+        "title": "Toggle Real-time Analysis",
+        "category": "CodeGuard"
+      }
+    ],
+    "configuration": {
+      "title": "CodeGuard",
+      "properties": {
+        "codeguard.apiKey": {
+          "type": "string",
+          "description": "OpenAI API Key for security analysis",
+          "scope": "application"
+        },
+        "codeguard.model": {
+          "type": "string",
+          "enum": [
+            "gpt-3.5-turbo",
+            "gpt-4"
+          ],
+          "default": "gpt-3.5-turbo",
+          "description": "OpenAI model to use for analysis"
+        },
+        "codeguard.debounceTime": {
+          "type": "number",
+          "default": 1000,
+          "minimum": 500,
+          "maximum": 5000,
+          "description": "Debounce time (ms) between analyses (500-5000ms)"
+        },
+        "codeguard.realTimeAnalysis": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable or disable real-time analysis of code blocks"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.63.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "vsce": "^2.15.0"
+  },
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skytells-ai/codeguard.git"
+  },
+  "keywords": [
+    "security",
+    "ai",
+    "code analysis",
+    "vulnerability",
+    "openai",
+    "code review",
+    "linting"
+  ],
+  "bugs": {
+    "url": "https://github.com/skytells-research/codeguard-vscode/issues"
+  },
+  "homepage": "https://github.com/skytells-research/codeguard-vscode"
+}
